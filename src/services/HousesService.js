@@ -12,7 +12,6 @@ class HousesService {
         logger.log(AppState.houses)
     }
 
-
 }
 
 export const housesService = new HousesService

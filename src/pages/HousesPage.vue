@@ -9,9 +9,10 @@
 </template>
 
 <script>
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import { housesService } from '../services/HousesService';
 import Pop from '../utils/Pop';
+import { AppState } from '../AppState';
 
 export default {
     setup() {
@@ -25,7 +26,9 @@ export default {
                 Pop.error(error)
             }
         }
-        return {};
+        return {
+            houses: computed(() => AppState.houses)
+        };
     },
 };
 </script>
